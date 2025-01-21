@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-ec1d12af9487bc57caf1724595cbb410.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-313693f95c66a69b212fa2e1c568f2b2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-958c7c0095f6f795a56d0b236b8f19e4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -91,25 +91,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../enterprise/index.html"> 
 <span class="menu-text">Enterprise</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Resources</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-resources">    
-        <li>
-    <a class="dropdown-item" href="../resources/install-python.html">
- <span class="dropdown-text">Install Python</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../resources/index.html"> 
+<span class="menu-text">Resources</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../resources/install-r.html">
- <span class="dropdown-text">Install R</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../resources/install-quarto.html">
- <span class="dropdown-text">Install Quarto</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="../open-source/index.html"> 
 <span class="menu-text">Open Source</span></a>
@@ -260,7 +245,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/ashley\.quarto\.pub\/docs-reimagined");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

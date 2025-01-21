@@ -29,6 +29,7 @@ page-layout: full
   <button type="button" class="btn btn-light">Package Manager</button>
   <button type="button" class="btn btn-light">Team</button>
   <button type="button" class="btn btn-light">RStudio</button>
+  <button type="button" class="btn btn-light">Pro Drivers</button>
   <button type="button" class="btn btn-light">RStudio Desktop Pro</button>
   <button type="button" class="btn btn-light">Posit Connect Cloud</button>
 </div>

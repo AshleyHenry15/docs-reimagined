@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Something">
 
 <title>Enterprise – Posit Docs</title>
 <style>
@@ -38,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-ec1d12af9487bc57caf1724595cbb410.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-97c341674010f888a58031ae8267c9b4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-958c7c0095f6f795a56d0b236b8f19e4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -91,25 +92,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link active" href="../enterprise/index.html" aria-current="page"> 
 <span class="menu-text">Enterprise</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Resources</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-resources">    
-        <li>
-    <a class="dropdown-item" href="//resources/install-python.html">
- <span class="dropdown-text">Install Python</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../resources/index.html"> 
+<span class="menu-text">Resources</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../resources/install-r.html">
- <span class="dropdown-text">Install R</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../resources/install-quarto.html">
- <span class="dropdown-text">Install Quarto</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="../open-source/index.html"> 
 <span class="menu-text">Open Source</span></a>
@@ -140,21 +126,26 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Enterprise</h1>
 </div>
 
+<div>
+  <div class="description">
+    Something
+  </div>
+</div>
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page">
 
     
   
@@ -165,6 +156,20 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+
+<style>
+.btn-lg {
+    width: 200px;
+    height: 150px;
+    padding-top: 50px;
+}
+
+</style>
+
+<a class="btn btn-primary btn-lg" href="https://docs.posit.co/ide/server-pro/" role="button">Workbench</a>
+<a class="btn btn-primary btn-lg" style="padding-top:40" href="https://docs.posit.co/connect" role="button">Connect</a>
+<a class="btn btn-primary btn-lg" href="https://docs.posit.co/rspm" role="button">Package Manager</a>
+<a class="btn btn-primary btn-lg" href="https://docs.posit.co/posit-team/" role="button">Team</a>
 
 
 
@@ -260,7 +265,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/ashley\.quarto\.pub\/docs-reimagined");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

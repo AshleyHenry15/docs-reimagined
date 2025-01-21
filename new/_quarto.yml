@@ -8,13 +8,7 @@ website:
       - text: Enterprise
         href: enterprise/index.qmd
       - text: Resources
-        menu:
-          - text: Install Python
-            href: /resources/install-python.qmd
-          - text: Install R
-            href: resources/install-r.qmd
-          - text: Install Quarto
-            href: resources/install-quarto.qmd
+        href: resources/index.qmd
       - text: Open Source
         href: open-source/index.qmd
       - text: Explore
@@ -28,10 +22,9 @@ website:
       - href: supported-versions/index.qmd
         text: Supported Versions
 
-
 format:
   html:
     theme: 
-      light: [brand, styles.scss]
+      light: [darkly, styles.scss]
 
 

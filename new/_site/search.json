@@ -4,7 +4,7 @@
     "href": "explore/index.html",
     "title": "Explore",
     "section": "",
-    "text": "Need help? Here is the complete coverage for all of our Posit Product documentation."
+    "text": "Need help? Here is the complete coverage for all of our Posit Product documentation.\n\n\n\n\n\n\n\n\n\n\n\n\nEnterprise\n\n\nSomething\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstall Python\n\n\nHow to install Python on a Linux server appropriately from pre-compiled binaries.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstall Quarto\n\n\nHow to install Quarto on a Linux server.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstall R\n\n\nThese instructions describe how to install R from precompiled binaries on a Linux server.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOpen Source\n\n\nA collection of open-source resources.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPartnerships\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPosit Team\n\n\nAn overview of Posit Team and Marketplace offerings.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSupported Versions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "resources/install-r.html",
@@ -70,60 +70,11 @@
     "text": "Additional information\nRefer to the rstudio/r-builds repository on GitHub for more information on these binary distributions of R.\nIf you need to customize how R is configured. For example, installing R at a different location than /opt/R, then follow these steps to install R from source."
   },
   {
-    "objectID": "resources/index.html",
-    "href": "resources/index.html",
-    "title": "Resources",
+    "objectID": "resources/team/index.html",
+    "href": "resources/team/index.html",
+    "title": "Posit Team",
     "section": "",
-    "text": "A comprehensive ecosystem of resources to get you started on your Posit Enterprise journey."
-  },
-  {
-    "objectID": "open-source/index.html",
-    "href": "open-source/index.html",
-    "title": "Open Source",
-    "section": "",
-    "text": "Our mission is to create open-source software for data science, scientific research, and technical communication. This is a small selection of open-source resources that we contribute to."
-  },
-  {
-    "objectID": "resources/install-quarto.html",
-    "href": "resources/install-quarto.html",
-    "title": "Install Quarto",
-    "section": "",
-    "text": "These instructions describe how to install Quarto on a Linux server. Find all available Quarto versions on the Quarto downloads page."
-  },
-  {
-    "objectID": "resources/install-quarto.html#what-is-quarto",
-    "href": "resources/install-quarto.html#what-is-quarto",
-    "title": "Install Quarto",
-    "section": "What is Quarto?",
-    "text": "What is Quarto?\nQuarto is an open-source scientific and technical publishing system built on Pandoc, and allows users to create dynamic content with Python, R, Julia, and Observable. Additional information about Quarto is available at https://quarto.org/."
-  },
-  {
-    "objectID": "resources/install-quarto.html#specify-quarto-version-tar",
-    "href": "resources/install-quarto.html#specify-quarto-version-tar",
-    "title": "Install Quarto",
-    "section": "Specify Quarto version",
-    "text": "Specify Quarto version\n\nReview the list of available Quarto versions on the release page.\nNow, set the QUARTO_VERSION environment variable to the version number you wish to install:\nexport QUARTO_VERSION=\"?var:quarto.version\""
-  },
-  {
-    "objectID": "resources/install-quarto.html#download-install-quarto-tar",
-    "href": "resources/install-quarto.html#download-install-quarto-tar",
-    "title": "Install Quarto",
-    "section": "Download and install Quarto",
-    "text": "Download and install Quarto\nDownload and install the version of Quarto specified in QUARTO_VERSION:\nsudo mkdir -p /opt/quarto/${QUARTO_VERSION}\n\nsudo curl -o quarto.tar.gz -L \\\n    \"https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.tar.gz\"\n\nsudo tar -zxvf quarto.tar.gz \\\n    -C \"/opt/quarto/${QUARTO_VERSION}\" \\\n    --strip-components=1\n    \nsudo rm quarto.tar.gz"
-  },
-  {
-    "objectID": "resources/install-quarto.html#verify-quarto-installation-tar",
-    "href": "resources/install-quarto.html#verify-quarto-installation-tar",
-    "title": "Install Quarto",
-    "section": "Verify Quarto installation",
-    "text": "Verify Quarto installation\nVerify that your Quarto installation was successful:\n/opt/quarto/\"${QUARTO_VERSION}\"/bin/quarto check\n\n(Optional) Add symlink for Quarto\nApplicable to Posit Workbench, only. Not required for Connect.\n\n\n\n\n\n\nImportant\n\n\n\nThis section only applies to the first installation of Quarto on a given system. For subsequent installations, skip this section.\n\n\nIn Posit Workbench, RStudio Pro sessions have Quarto available by default. To use Quarto in VSCode or JupyterLab, you need to either symlink or install Quarto into a location on the PATH for those editors.\n# If using the default Quarto bundled with RStudio Pro\nsudo ln -s /usr/lib/rstudio-server/bin/quarto/bin/quarto /usr/local/bin/quarto\n\n# If you have installed a non-default Quarto using the above instructions\nsudo ln -s /opt/quarto/${QUARTO_VERSION}/bin/quarto /usr/local/bin/quarto\n\n\n(Optional) Install multiple versions of Quarto\nTo install multiple versions of Quarto on the same server, repeat the steps above, setting QUARTO_VERSION to a different version number each time.\nThis:\n\nPlaces different versions of Quarto in parallel folders.\nAllows you to support multiple Quarto versions in some of Posit’s professional products."
-  },
-  {
-    "objectID": "resources/install-quarto.html#additional-resources",
-    "href": "resources/install-quarto.html#additional-resources",
-    "title": "Install Quarto",
-    "section": "Additional resources",
-    "text": "Additional resources\n\nConfiguring Quarto with Connect\nInstalling Quarto on your system before configuring Connect to allow support for Quarto content is required. Complete the installation procedures above and then review the following sections of the Posit Connect Admin Guide:\n\nQuarto\nEnabling Quarto Support"
+    "text": "Something here\n\n\n\n\n\n\n\n\n\n\n\n\nRequirements\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "resources/install-python.html",
@@ -210,10 +161,143 @@
     "text": "Additional information\nRefer to the rstudio/python-builds repository on GitHub for more information on these binary distributions of Python.\nFollow these steps to install Python from source."
   },
   {
+    "objectID": "resources/index.html",
+    "href": "resources/index.html",
+    "title": "Resources",
+    "section": "",
+    "text": "A comprehensive ecosystem of resources to get you started on your Posit Enterprise journey.\n\n\n\n\n\n\n\n\n\n\n\n\nInstall Python\n\n\nHow to install Python on a Linux server appropriately from pre-compiled binaries.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstall Quarto\n\n\nHow to install Quarto on a Linux server.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstall R\n\n\nThese instructions describe how to install R from precompiled binaries on a Linux server.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPartnerships\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPosit Team\n\n\nAn overview of Posit Team and Marketplace offerings.\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "open-source/index.html",
+    "href": "open-source/index.html",
+    "title": "Open Source",
+    "section": "",
+    "text": "Our mission is to create open-source software for data science, scientific research, and technical communication. This is a small selection of open-source resources that we contribute to."
+  },
+  {
+    "objectID": "open-source/index.html#quarto",
+    "href": "open-source/index.html#quarto",
+    "title": "Open Source",
+    "section": "Quarto",
+    "text": "Quarto\nAn open-source scientific and technical publishing system.\n\n\nAuthor using Jupyter notebooks or with plain text markdown in your favorite editor.\nCreate dynamic content with Python, R, Julia, and Observable.\nPublish reproducible, production quality articles, presentations, dashboards, websites, blogs, and books in HTML, PDF, MS Word, ePub, and more.\n\nView Quarto’s Get Started documentation to install Quarto and use the tutorials to learn the basics.\nTo install Quarto on a Linux server, see the Install Quarto guide."
+  },
+  {
+    "objectID": "open-source/index.html#shiny",
+    "href": "open-source/index.html#shiny",
+    "title": "Open Source",
+    "section": "Shiny",
+    "text": "Shiny\nShiny is package that makes it easy to build interactive web apps straight from R & Python.\nYou can host standalone apps on a webpage or embed them in R Markdown documents or build dashboards. You can also extend your Shiny apps with CSS themes, htmlwidgets, and JavaScript actions.\nVisit the Shiny website for more information."
+  },
+  {
+    "objectID": "open-source/index.html#r-markdown",
+    "href": "open-source/index.html#r-markdown",
+    "title": "Open Source",
+    "section": "R Markdown",
+    "text": "R Markdown\nR Markdown documents allow you to embed code chunks (of R or other languages) in Markdown documents and are fully reproducible. Use multiple languages including R, Python, and SQL.\nR Markdown supports dozens of static and dynamic output formats including HTML, PDF, MS Word, Beamer, HTML5 slides, Tufte-style handouts, books, dashboards, Shiny applications, scientific articles, websites, and more.\nVisit the R Markdown website for more information."
+  },
+  {
+    "objectID": "open-source/index.html#plumber",
+    "href": "open-source/index.html#plumber",
+    "title": "Open Source",
+    "section": "Plumber",
+    "text": "Plumber\nPlumber allows you to create a web API by merely decorating your existing R source code with special comments.\nPosit Connect automatically manages the dependent packages and files your API has and recreates an environment that closely mimicks your local development environment on the server.\nVisit the Plumber website for more information."
+  },
+  {
+    "objectID": "open-source/index.html#tidyverse",
+    "href": "open-source/index.html#tidyverse",
+    "title": "Open Source",
+    "section": "Tidyverse",
+    "text": "Tidyverse\nThe tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures.\nThe core tidyverse includes the packages that you’re likely to use in everyday data analyses.\nVisit the Tidyverse website for more information."
+  },
+  {
+    "objectID": "open-source/index.html#using-rstudio-with-databases",
+    "href": "open-source/index.html#using-rstudio-with-databases",
+    "title": "Open Source",
+    "section": "Using RStudio with databases",
+    "text": "Using RStudio with databases\nRStudio makes it easy to access and analyze your data with R. Posit Professional Drivers are ODBC data connectors that help you connect to the most popular databases."
+  },
+  {
+    "objectID": "open-source/index.html#spark",
+    "href": "open-source/index.html#spark",
+    "title": "Open Source",
+    "section": "Spark",
+    "text": "Spark\nSparklyr is an R interface for Apache Spark that allows you to:\n\nInstall and connect to Spark using YARN, Mesos, Livy or Kubernetes\nUse dplyr to filter and aggregate Spark datasets and streams then bring them into R for analysis and visualization\nUse MLlib, H2O, XGBoost and GraphFrames to train models at scale in Spark\nCreate interoperable machine learning pipelines and productionize them with MLeap\nCreate extensions that call the full Spark API or run distributed R code to support new functionality\n\nVisit spark.posit.co for more information."
+  },
+  {
+    "objectID": "open-source/index.html#tensorflow",
+    "href": "open-source/index.html#tensorflow",
+    "title": "Open Source",
+    "section": "Tensorflow",
+    "text": "Tensorflow\nTensorFlow is an open source software library for numerical computation using data flow graphs. Nodes in the graph represent mathematical operations, while the graph edges represent the multidimensional data arrays (tensors) communicated between them. The flexible architecture allows you to deploy computation to one or more CPUs or GPUs in a desktop, server, or mobile device with a single API.\nA set of Python modules composes the TensorFlow API that enable constructing and executing TensorFlow graphs. The tensorflow package for R provides access to the complete TensorFlow API from within R.\nVisit tensorflow.rstudio.com for more information."
+  },
+  {
+    "objectID": "open-source/index.html#keras",
+    "href": "open-source/index.html#keras",
+    "title": "Open Source",
+    "section": "Keras",
+    "text": "Keras\nKeras is a high-level neural networks API developed with a focus on enabling fast experimentation. Being able to go from idea to result with the least possible delay is key to doing good research.\nKeras has the following key features:\n\nAllows the same code to run on CPU or on GPU, seamlessly.\nUser-friendly API which makes it easy to prototype deep learning models.\nBuilt-in support for convolutional networks (for computer vision), recurrent networks (for sequence processing), and any combination of both.\nSupports arbitrary network architectures: multi-input or multi-output models, layer sharing, model sharing, etc. This means that Keras is appropriate for building essentially any deep learning model, from a memory network to a neural Turing machine.\n\n\n\n\n\n\n\nkeras package for R\n\n\n\nThe keras package for R provides access to the Keras API from within R.\n\n\nVisit keras.posit.co for more information."
+  },
+  {
+    "objectID": "enterprise/index.html",
+    "href": "enterprise/index.html",
+    "title": "Enterprise",
+    "section": "",
+    "text": "Workbench\nConnect\nPackage Manager\nTeam"
+  },
+  {
+    "objectID": "resources/install-quarto.html",
+    "href": "resources/install-quarto.html",
+    "title": "Install Quarto",
+    "section": "",
+    "text": "These instructions describe how to install Quarto on a Linux server. Find all available Quarto versions on the Quarto downloads page."
+  },
+  {
+    "objectID": "resources/install-quarto.html#what-is-quarto",
+    "href": "resources/install-quarto.html#what-is-quarto",
+    "title": "Install Quarto",
+    "section": "What is Quarto?",
+    "text": "What is Quarto?\nQuarto is an open-source scientific and technical publishing system built on Pandoc, and allows users to create dynamic content with Python, R, Julia, and Observable. Additional information about Quarto is available at https://quarto.org/."
+  },
+  {
+    "objectID": "resources/install-quarto.html#specify-quarto-version-tar",
+    "href": "resources/install-quarto.html#specify-quarto-version-tar",
+    "title": "Install Quarto",
+    "section": "Specify Quarto version",
+    "text": "Specify Quarto version\n\nReview the list of available Quarto versions on the release page.\nNow, set the QUARTO_VERSION environment variable to the version number you wish to install:\nexport QUARTO_VERSION=\"?var:quarto.version\""
+  },
+  {
+    "objectID": "resources/install-quarto.html#download-install-quarto-tar",
+    "href": "resources/install-quarto.html#download-install-quarto-tar",
+    "title": "Install Quarto",
+    "section": "Download and install Quarto",
+    "text": "Download and install Quarto\nDownload and install the version of Quarto specified in QUARTO_VERSION:\nsudo mkdir -p /opt/quarto/${QUARTO_VERSION}\n\nsudo curl -o quarto.tar.gz -L \\\n    \"https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.tar.gz\"\n\nsudo tar -zxvf quarto.tar.gz \\\n    -C \"/opt/quarto/${QUARTO_VERSION}\" \\\n    --strip-components=1\n    \nsudo rm quarto.tar.gz"
+  },
+  {
+    "objectID": "resources/install-quarto.html#verify-quarto-installation-tar",
+    "href": "resources/install-quarto.html#verify-quarto-installation-tar",
+    "title": "Install Quarto",
+    "section": "Verify Quarto installation",
+    "text": "Verify Quarto installation\nVerify that your Quarto installation was successful:\n/opt/quarto/\"${QUARTO_VERSION}\"/bin/quarto check\n\n(Optional) Add symlink for Quarto\nApplicable to Posit Workbench, only. Not required for Connect.\n\n\n\n\n\n\nImportant\n\n\n\nThis section only applies to the first installation of Quarto on a given system. For subsequent installations, skip this section.\n\n\nIn Posit Workbench, RStudio Pro sessions have Quarto available by default. To use Quarto in VSCode or JupyterLab, you need to either symlink or install Quarto into a location on the PATH for those editors.\n# If using the default Quarto bundled with RStudio Pro\nsudo ln -s /usr/lib/rstudio-server/bin/quarto/bin/quarto /usr/local/bin/quarto\n\n# If you have installed a non-default Quarto using the above instructions\nsudo ln -s /opt/quarto/${QUARTO_VERSION}/bin/quarto /usr/local/bin/quarto\n\n\n(Optional) Install multiple versions of Quarto\nTo install multiple versions of Quarto on the same server, repeat the steps above, setting QUARTO_VERSION to a different version number each time.\nThis:\n\nPlaces different versions of Quarto in parallel folders.\nAllows you to support multiple Quarto versions in some of Posit’s professional products."
+  },
+  {
+    "objectID": "resources/install-quarto.html#additional-resources",
+    "href": "resources/install-quarto.html#additional-resources",
+    "title": "Install Quarto",
+    "section": "Additional resources",
+    "text": "Additional resources\n\nConfiguring Quarto with Connect\nInstalling Quarto on your system before configuring Connect to allow support for Quarto content is required. Complete the installation procedures above and then review the following sections of the Posit Connect Admin Guide:\n\nQuarto\nEnabling Quarto Support"
+  },
+  {
+    "objectID": "resources/team/requirements.html",
+    "href": "resources/team/requirements.html",
+    "title": "Requirements",
+    "section": "",
+    "text": "Something"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Posit Docs",
     "section": "",
-    "text": "Get started\n\n\nReference Architectures Install Licensing Configuration Networking Storage\n\n\nDocumentation by product\n\n\nWorkbench Connect Package Manager Team RStudio RStudio Desktop Pro Posit Connect Cloud\n\n\nPosit Cloud Public Package Manager shinyapps.io Marketplace Offers\n\n\nPartnerships\n\n\nSnowflake Databricks AWS SageMaker"
+    "text": "Get started\n\n\nReference Architectures Install Licensing Configuration Networking Storage\n\n\nDocumentation by product\n\n\nWorkbench Connect Package Manager Team RStudio Pro Drivers RStudio Desktop Pro Posit Connect Cloud\n\n\nPosit Cloud Public Package Manager shinyapps.io Marketplace Offers\n\n\nPartnerships\n\n\nSnowflake Databricks AWS SageMaker"
   }
 ]

@@ -1,3 +1,22 @@
 ---
 title: Enterprise
+page-layout: full
+description: Something
 ---
+<style>
+.btn-lg {
+    width: 200px;
+    height: 150px;
+    padding-top: 50px;
+}
+
+</style>
+
+```{=html}
+
+<a class="btn btn-primary btn-lg" href="https://docs.posit.co/ide/server-pro/" role="button">Workbench</a>
+<a class="btn btn-primary btn-lg" style="padding-top:40" href="https://docs.posit.co/connect" role="button">Connect</a>
+<a class="btn btn-primary btn-lg" href="https://docs.posit.co/rspm" role="button">Package Manager</a>
+<a class="btn btn-primary btn-lg" href="https://docs.posit.co/posit-team/" role="button">Team</a>
+
+```

@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: 7cc96e4c-2fb3-4389-8bc3-a81b86455da9
+      url: https://ashley.quarto.pub/docs-reimagined

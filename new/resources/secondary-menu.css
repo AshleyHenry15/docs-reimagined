@@ -1,3 +1,5 @@
+/*-- scss:defaults --*/
+
 @media only screen and (min-width:992px) {
     .dropdown-menu {
       flex-direction: row;
@@ -13,7 +15,7 @@
       border-right: 0px;
       border-bottom: 0px;
       border-radius: 0%;
-      background-color: #007BC2;
+      background-color: #007BC2 !important;
       right: 0;
       left: auto;
       margin-top: 8px;
