@@ -1,0 +1,219 @@
+[
+  {
+    "objectID": "explore/index.html",
+    "href": "explore/index.html",
+    "title": "Explore",
+    "section": "",
+    "text": "Need help? Here is the complete coverage for all of our Posit Product documentation."
+  },
+  {
+    "objectID": "resources/install-r.html",
+    "href": "resources/install-r.html",
+    "title": "Install R",
+    "section": "",
+    "text": "The recommended installation instructions for R covers making multiple versions of R available, and avoid replacing existing versions of R when updating system packages.\nAdditionally, these instructions cover installing multiple versions of R, downloading R, creating a symlink to R, etc."
+  },
+  {
+    "objectID": "resources/install-r.html#install-required-dependencies",
+    "href": "resources/install-r.html#install-required-dependencies",
+    "title": "Install R",
+    "section": "Install required dependencies",
+    "text": "Install required dependencies\nTo install the necessary runtime dependencies for R, enable additional repositories for third-party or source packages by using the following commands:\n\nRHEL 9RHEL 8\n\n\nEnable the Extra Packages for Enterprise Linux (EPEL) repository:\nsudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm\nEnable the CodeReady Linux Builder repository:\n\nOn-premisesPublic cloud\n\n\nsudo subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms\n\n\n# enable the CodeReady Linux Builder repository from Red Hat Update Infrastructure (RHUI) \nsudo dnf install dnf-plugins-core\nsudo dnf config-manager --set-enabled codeready-builder-for-rhel-9-*-rpms\n\n\n\n\n\nEnable the Extra Packages for Enterprise Linux (EPEL) repository\nsudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm\nEnable the CodeReady Linux Builder repository:\n\nOn-premisesPublic cloud\n\n\nsudo subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms\n\n\n# enable the CodeReady Linux Builder repository from Red Hat Update Infrastructure (RHUI) \nsudo dnf install dnf-plugins-core\nsudo dnf config-manager --set-enabled \"codeready-builder-for-rhel-8-*-rpms\""
+  },
+  {
+    "objectID": "resources/install-r.html#specify-r-version",
+    "href": "resources/install-r.html#specify-r-version",
+    "title": "Install R",
+    "section": "Specify R version",
+    "text": "Specify R version\nConsult with your R user group to determine which version(s) of R they would like installed and then confirm that the version(s) of R are supported by the Posit product.\nOnce defined, set the environment variable, shown below, to the first R version they request.\n\n\n\n\n\n\nNote\n\n\n\nAll available versions of R may not be supported by each product. Please verify the supported R versions in the product guides and release notes.\n\n\nThe CVE-2024-27322 patched versions of R &gt;= 4.0.0 are available via the links below. If you previously installed R from these links, reinstall to obtain a patched version. See rstudio/r-builds#219 for more details.\nFor multiple versions of R, follow the remaining steps and repeat them for each R version required:\nexport R_VERSION=?var:installr.currentversion\n\n\n\n\n\n\nAvailable versions of R\n\n\n\n\n\nVersions of R that are available include: 3.6.x, 4.0.x, 4.1.x, 4.2.x, 4.3.x, 4.4.x\nIf you need to use an earlier version of R, then you will need to modify the export command shown above:\n\n\nTerminal\n\nexport R_VERSION=3.X.X\n\nPlease see the CRAN index of R versions for all available versions of R."
+  },
+  {
+    "objectID": "resources/install-r.html#download-and-install-r",
+    "href": "resources/install-r.html#download-and-install-r",
+    "title": "Install R",
+    "section": "Download and install R",
+    "text": "Download and install R\nDownload and install the desired version of R.\n\nRHELUbuntuDebianSUSE\n\n\n\nRHEL 9RHEL 8\n\n\ncurl -O https://cdn.rstudio.com/r/rhel-9/pkgs/R-${R_VERSION}-1-1.x86_64.rpm\nsudo dnf install R-${R_VERSION}-1-1.x86_64.rpm\n\n\ncurl -O https://cdn.rstudio.com/r/centos-8/pkgs/R-${R_VERSION}-1-1.x86_64.rpm\nsudo yum install R-${R_VERSION}-1-1.x86_64.rpm\n\n\n\n\n\n\nUbuntu 24.04Ubuntu 22.04Ubuntu 20.04\n\n\ncurl -O https://cdn.rstudio.com/r/ubuntu-2404/pkgs/r-${R_VERSION}_1_amd64.deb\nsudo apt-get update\nsudo apt-get install ./r-${R_VERSION}_1_amd64.deb\n\n\ncurl -O https://cdn.rstudio.com/r/ubuntu-2204/pkgs/r-${R_VERSION}_1_amd64.deb\nsudo apt-get update\nsudo apt-get install ./r-${R_VERSION}_1_amd64.deb\n\n\ncurl -O https://cdn.rstudio.com/r/ubuntu-2004/pkgs/r-${R_VERSION}_1_amd64.deb\nsudo apt-get update\nsudo apt-get install ./r-${R_VERSION}_1_amd64.deb\n\n\n\n\n\n\nDebian 12Debian 11Debian 10\n\n\ncurl -O https://cdn.rstudio.com/r/debian-12/pkgs/r-${R_VERSION}_1_amd64.deb\nsudo apt-get update\nsudo apt-get install ./r-${R_VERSION}_1_amd64.deb\n\n\ncurl -O https://cdn.rstudio.com/r/debian-11/pkgs/r-${R_VERSION}_1_amd64.deb\nsudo apt-get update\nsudo apt-get install ./r-${R_VERSION}_1_amd64.deb\n\n\ncurl -O https://cdn.rstudio.com/r/debian-10/pkgs/r-${R_VERSION}_1_amd64.deb\nsudo apt-get update\nsudo apt-get install ./r-${R_VERSION}_1_amd64.deb\n\n\n\n\n\n\nSUSE 15 SP5SUSE 15 SP6\n\n\ncurl -O https://cdn.rstudio.com/r/opensuse-155/pkgs/R-${R_VERSION}-1-1.x86_64.rpm\nsudo zypper --no-gpg-checks install R-${R_VERSION}-1-1.x86_64.rpm\n\n\ncurl -O https://cdn.rstudio.com/r/opensuse-156/pkgs/R-${R_VERSION}-1-1.x86_64.rpm\nsudo zypper --no-gpg-checks install R-${R_VERSION}-1-1.x86_64.rpm"
+  },
+  {
+    "objectID": "resources/install-r.html#verify-r-installation",
+    "href": "resources/install-r.html#verify-r-installation",
+    "title": "Install R",
+    "section": "Verify R installation",
+    "text": "Verify R installation\nTest that R was successfully installed by running:\n/opt/R/${R_VERSION}/bin/R --version"
+  },
+  {
+    "objectID": "resources/install-r.html#create-a-symlink-to-r",
+    "href": "resources/install-r.html#create-a-symlink-to-r",
+    "title": "Install R",
+    "section": "Create a symlink to R",
+    "text": "Create a symlink to R\nThis section only applies to the first installation of R on a given system.\nSkip this section for subsequent installation.\nTo ensure that R is available on the default system PATH variable, create symbolic links to the version of R that’s installed:\nsudo ln -s /opt/R/${R_VERSION}/bin/R /usr/local/bin/R\nsudo ln -s /opt/R/${R_VERSION}/bin/Rscript /usr/local/bin/Rscript"
+  },
+  {
+    "objectID": "resources/install-r.html#optional-install-recommended-packages",
+    "href": "resources/install-r.html#optional-install-recommended-packages",
+    "title": "Install R",
+    "section": "(Optional) Install recommended packages",
+    "text": "(Optional) Install recommended packages\nPosit recommends installing several (optional) system dependencies used common R packages.\nPosit Package Manager can automatically detect known system dependencies and provides installation commands for supported Linux operating systems. The System Dependency Detection documentation provides additional information."
+  },
+  {
+    "objectID": "resources/install-r.html#optional-install-multiple-versions-of-r",
+    "href": "resources/install-r.html#optional-install-multiple-versions-of-r",
+    "title": "Install R",
+    "section": "(Optional) Install multiple versions of R",
+    "text": "(Optional) Install multiple versions of R\nTo install multiple versions of R on the same server, repeat these steps to specify, download, and install a different version of R alongside existing versions."
+  },
+  {
+    "objectID": "resources/install-r.html#additional-information",
+    "href": "resources/install-r.html#additional-information",
+    "title": "Install R",
+    "section": "Additional information",
+    "text": "Additional information\nRefer to the rstudio/r-builds repository on GitHub for more information on these binary distributions of R.\nIf you need to customize how R is configured. For example, installing R at a different location than /opt/R, then follow these steps to install R from source."
+  },
+  {
+    "objectID": "resources/index.html",
+    "href": "resources/index.html",
+    "title": "Resources",
+    "section": "",
+    "text": "A comprehensive ecosystem of resources to get you started on your Posit Enterprise journey."
+  },
+  {
+    "objectID": "open-source/index.html",
+    "href": "open-source/index.html",
+    "title": "Open Source",
+    "section": "",
+    "text": "Our mission is to create open-source software for data science, scientific research, and technical communication. This is a small selection of open-source resources that we contribute to."
+  },
+  {
+    "objectID": "resources/install-quarto.html",
+    "href": "resources/install-quarto.html",
+    "title": "Install Quarto",
+    "section": "",
+    "text": "These instructions describe how to install Quarto on a Linux server. Find all available Quarto versions on the Quarto downloads page."
+  },
+  {
+    "objectID": "resources/install-quarto.html#what-is-quarto",
+    "href": "resources/install-quarto.html#what-is-quarto",
+    "title": "Install Quarto",
+    "section": "What is Quarto?",
+    "text": "What is Quarto?\nQuarto is an open-source scientific and technical publishing system built on Pandoc, and allows users to create dynamic content with Python, R, Julia, and Observable. Additional information about Quarto is available at https://quarto.org/."
+  },
+  {
+    "objectID": "resources/install-quarto.html#specify-quarto-version-tar",
+    "href": "resources/install-quarto.html#specify-quarto-version-tar",
+    "title": "Install Quarto",
+    "section": "Specify Quarto version",
+    "text": "Specify Quarto version\n\nReview the list of available Quarto versions on the release page.\nNow, set the QUARTO_VERSION environment variable to the version number you wish to install:\nexport QUARTO_VERSION=\"?var:quarto.version\""
+  },
+  {
+    "objectID": "resources/install-quarto.html#download-install-quarto-tar",
+    "href": "resources/install-quarto.html#download-install-quarto-tar",
+    "title": "Install Quarto",
+    "section": "Download and install Quarto",
+    "text": "Download and install Quarto\nDownload and install the version of Quarto specified in QUARTO_VERSION:\nsudo mkdir -p /opt/quarto/${QUARTO_VERSION}\n\nsudo curl -o quarto.tar.gz -L \\\n    \"https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.tar.gz\"\n\nsudo tar -zxvf quarto.tar.gz \\\n    -C \"/opt/quarto/${QUARTO_VERSION}\" \\\n    --strip-components=1\n    \nsudo rm quarto.tar.gz"
+  },
+  {
+    "objectID": "resources/install-quarto.html#verify-quarto-installation-tar",
+    "href": "resources/install-quarto.html#verify-quarto-installation-tar",
+    "title": "Install Quarto",
+    "section": "Verify Quarto installation",
+    "text": "Verify Quarto installation\nVerify that your Quarto installation was successful:\n/opt/quarto/\"${QUARTO_VERSION}\"/bin/quarto check\n\n(Optional) Add symlink for Quarto\nApplicable to Posit Workbench, only. Not required for Connect.\n\n\n\n\n\n\nImportant\n\n\n\nThis section only applies to the first installation of Quarto on a given system. For subsequent installations, skip this section.\n\n\nIn Posit Workbench, RStudio Pro sessions have Quarto available by default. To use Quarto in VSCode or JupyterLab, you need to either symlink or install Quarto into a location on the PATH for those editors.\n# If using the default Quarto bundled with RStudio Pro\nsudo ln -s /usr/lib/rstudio-server/bin/quarto/bin/quarto /usr/local/bin/quarto\n\n# If you have installed a non-default Quarto using the above instructions\nsudo ln -s /opt/quarto/${QUARTO_VERSION}/bin/quarto /usr/local/bin/quarto\n\n\n(Optional) Install multiple versions of Quarto\nTo install multiple versions of Quarto on the same server, repeat the steps above, setting QUARTO_VERSION to a different version number each time.\nThis:\n\nPlaces different versions of Quarto in parallel folders.\nAllows you to support multiple Quarto versions in some of Posit’s professional products."
+  },
+  {
+    "objectID": "resources/install-quarto.html#additional-resources",
+    "href": "resources/install-quarto.html#additional-resources",
+    "title": "Install Quarto",
+    "section": "Additional resources",
+    "text": "Additional resources\n\nConfiguring Quarto with Connect\nInstalling Quarto on your system before configuring Connect to allow support for Quarto content is required. Complete the installation procedures above and then review the following sections of the Posit Connect Admin Guide:\n\nQuarto\nEnabling Quarto Support"
+  },
+  {
+    "objectID": "resources/install-python.html",
+    "href": "resources/install-python.html",
+    "title": "Install Python",
+    "section": "",
+    "text": "Posit professional products require multiple versions of Python."
+  },
+  {
+    "objectID": "resources/install-python.html#install-required-dependencies",
+    "href": "resources/install-python.html#install-required-dependencies",
+    "title": "Install Python",
+    "section": "Install required dependencies",
+    "text": "Install required dependencies\nTo install the necessary runtime dependencies for Python, you must enable additional repositories for third-party or source packages by using the following commands:\n\nRHEL 9RHEL 8\n\n\nEnable the Extra Packages for Enterprise Linux (EPEL) repository:\nsudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm\nEnable the CodeReady Linux Builder repository:\n\nOn-premisesPublic cloud\n\n\nsudo subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms\n\n\n# enable the CodeReady Linux Builder repository from Red Hat Update Infrastructure (RHUI) \nsudo dnf install dnf-plugins-core\nsudo dnf config-manager --set-enabled codeready-builder-for-rhel-9-*-rpms\n\n\n\n\n\nEnable the Extra Packages for Enterprise Linux (EPEL) repository\nsudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm\nEnable the CodeReady Linux Builder repository:\n\nOn-premisesPublic cloud\n\n\nsudo subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms\n\n\n# enable the CodeReady Linux Builder repository from Red Hat Update Infrastructure (RHUI) \nsudo dnf install dnf-plugins-core\nsudo dnf config-manager --set-enabled \"codeready-builder-for-rhel-8-*-rpms\""
+  },
+  {
+    "objectID": "resources/install-python.html#specify-the-python-version",
+    "href": "resources/install-python.html#specify-the-python-version",
+    "title": "Install Python",
+    "section": "Specify the Python version",
+    "text": "Specify the Python version\nConsult with your Python user group to determine which version/versions of Python they would like installed. Once defined, set the environment variable, shown below, to the first Python version they request.\nexport PYTHON_VERSION=\"?var:python.version\"\n\n\n\n\n\n\nAvailable versions of Python\n\n\n\n\n\nVersions of Python that are available include: 3.8.x ,3.9.x, 3.10.x, 3.11.x, 3.12.x\nIf you need to use an earlier version of Python, then you will need to modify the export command shown above:\n\n\nTerminal\n\nexport PYTHON_VERSION=3.X.X\n\nPlease see the Python downloads page for all available versions of Python."
+  },
+  {
+    "objectID": "resources/install-python.html#download-and-install-python",
+    "href": "resources/install-python.html#download-and-install-python",
+    "title": "Install Python",
+    "section": "Download and install Python",
+    "text": "Download and install Python\nDownload and install the desired version of Python.\n\nRHELUbuntuDebianSUSE\n\n\n\nRHEL9RHEL 8\n\n\ncurl -O https://cdn.rstudio.com/python/rhel-9/pkgs/python-${PYTHON_VERSION}-1-1.x86_64.rpm\nsudo yum install python-${PYTHON_VERSION}-1-1.x86_64.rpm\n\n\ncurl -O https://cdn.rstudio.com/python/centos-8/pkgs/python-${PYTHON_VERSION}-1-1.x86_64.rpm\nsudo yum install python-${PYTHON_VERSION}-1-1.x86_64.rpm\n\n\n\n\n\n\nUbuntu 24.04Ubuntu 22.04Ubuntu 20.04\n\n\ncurl -O https://cdn.rstudio.com/python/ubuntu-2404/pkgs/python-${PYTHON_VERSION}_1_amd64.deb\nsudo apt-get update\nsudo apt-get install ./python-${PYTHON_VERSION}_1_amd64.deb\n\n\ncurl -O https://cdn.rstudio.com/python/ubuntu-2204/pkgs/python-${PYTHON_VERSION}_1_amd64.deb\nsudo apt-get update\nsudo apt-get install ./python-${PYTHON_VERSION}_1_amd64.deb\n\n\ncurl -O https://cdn.rstudio.com/python/ubuntu-2004/pkgs/python-${PYTHON_VERSION}_1_amd64.deb\nsudo apt-get update\nsudo apt-get install ./python-${PYTHON_VERSION}_1_amd64.deb\n\n\n\n\n\n\nDebian 12Debian 11Debian 10\n\n\ncurl -O https://cdn.rstudio.com/python/debian-12/pkgs/python-${PYTHON_VERSION}_1_amd64.deb\nsudo apt-get update\nsudo apt-get install ./python-${PYTHON_VERSION}_1_amd64.deb\n\n\ncurl -O https://cdn.rstudio.com/python/debian-11/pkgs/python-${PYTHON_VERSION}_1_amd64.deb\nsudo apt-get update\nsudo apt-get install ./python-${PYTHON_VERSION}_1_amd64.deb\n\n\ncurl -O https://cdn.rstudio.com/python/debian-10/pkgs/python-${PYTHON_VERSION}_1_amd64.deb\nsudo apt-get update\nsudo apt-get install ./python-${PYTHON_VERSION}_1_amd64.deb\n\n\n\n\n\n\nSUSE 15 SP5/SP6\n\n\ncurl -O https://cdn.rstudio.com/python/opensuse-155/pkgs/python-${PYTHON_VERSION}-1-1.x86_64.rpm\nsudo zypper --no-gpg-checks install python-${PYTHON_VERSION}-1-1.x86_64.rpm"
+  },
+  {
+    "objectID": "resources/install-python.html#verify-python-installation",
+    "href": "resources/install-python.html#verify-python-installation",
+    "title": "Install Python",
+    "section": "Verify Python installation",
+    "text": "Verify Python installation\nVerify that Python is installed by running the following command:\n/opt/python/\"${PYTHON_VERSION}\"/bin/python --version"
+  },
+  {
+    "objectID": "resources/install-python.html#upgrade-required-python-tools",
+    "href": "resources/install-python.html#upgrade-required-python-tools",
+    "title": "Install Python",
+    "section": "Upgrade required Python tools",
+    "text": "Upgrade required Python tools\nWhen installing Python on a Posit Connect server, each Python installation is required to have the pip, venv, and setuptools packages installed. The Python venv module is used to create content-specific environments, while pip and setuptools are used to install Python packages.\n\n\n\n\n\n\nNote\n\n\n\nWhen using Python &gt;= 3.12, the setuptools module is no longer installed by default.\n\n\nConnect requires that users have updated versions of these Python tools. To install and upgrade the required tools, run the following command:\nsudo /opt/python/\"${PYTHON_VERSION}\"/bin/pip install \\\n    --upgrade pip setuptools wheel"
+  },
+  {
+    "objectID": "resources/install-python.html#optional-configure-a-pypi-repository",
+    "href": "resources/install-python.html#optional-configure-a-pypi-repository",
+    "title": "Install Python",
+    "section": "(Optional) Configure a PyPI repository",
+    "text": "(Optional) Configure a PyPI repository\nYou can specify a default PyPI mirror for all installations of Python by creating a pip configuration file. This can be useful if you are using an internal PyPI mirror such as Posit Package Manager:\nTo do so, create a file located at /etc/pip.conf containing:\n\n\nFile: /etc/pip.conf\n\n[global]\nindex-url = https://example.company.com/pypi/latest\n\nReplace https://example.company.com/pypi/latest with the URL of your PyPI mirror, available in Package Manager on the Setup page of your PyPI repository."
+  },
+  {
+    "objectID": "resources/install-python.html#optional-add-python-to-the-system-path",
+    "href": "resources/install-python.html#optional-add-python-to-the-system-path",
+    "title": "Install Python",
+    "section": "(Optional) Add Python to the system PATH",
+    "text": "(Optional) Add Python to the system PATH\n\n\n\n\n\n\nNote\n\n\n\nYou can configure Python on the system PATH so that users can use pip within a terminal to install packages to their home directory, similar to how R works with install.packages().\n\n\nThe recommended method to add Python to the PATH is to append the version of Python that you installed to the system-wide PATH variable. For example, define this in a script within the /etc/profile.d/ directory:\ncat &lt;&lt; EOF | sudo tee /etc/profile.d/python.sh\n#!/bin/bash\nexport PATH=/opt/python/${PYTHON_VERSION}/bin:\\$PATH\nEOF"
+  },
+  {
+    "objectID": "resources/install-python.html#optional-make-python-available-as-a-jupyter-kernel",
+    "href": "resources/install-python.html#optional-make-python-available-as-a-jupyter-kernel",
+    "title": "Install Python",
+    "section": "(Optional) Make Python available as a Jupyter Kernel",
+    "text": "(Optional) Make Python available as a Jupyter Kernel\nFor Workbench, you can make the version of Python installed available for use in Jupyter by running these commands:\nsudo /opt/python/${PYTHON_VERSION}/bin/pip install ipykernel\nsudo /opt/python/${PYTHON_VERSION}/bin/python -m ipykernel install --name py${PYTHON_VERSION} --display-name \"Python ${PYTHON_VERSION}\""
+  },
+  {
+    "objectID": "resources/install-python.html#optional-configure-python-local-certificate-authority-trust",
+    "href": "resources/install-python.html#optional-configure-python-local-certificate-authority-trust",
+    "title": "Install Python",
+    "section": "(Optional) Configure Python local Certificate Authority trust",
+    "text": "(Optional) Configure Python local Certificate Authority trust\nAdd the root CA certificate to the system trust store for Python on Workbench to trust internally generated certificates. See the Posit Team SSL Considerations support article for more information. Then, point the environment variable REQUESTS_CA_BUNDLE to the Linux system certificate store you have just updated based on the article above. You can set REQUESTS_CA_BUNDLE to the appropriate certificate bundle by updating the /etc/rstudio/launcher-env on Posit Workbench like this:\n\nRed Hat/CentOSUbuntu/Debian\n\n\nJobType: any\nWorkbench: any\nEnvironment: REQUESTS_CA_BUNDLE=/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem\n\n\nJobType: any\nWorkbench: any\nEnvironment: REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt\n\n\n\nFor Posit Connect, use a program supervisor script to set REQUESTS_CA_BUNDLE for all applications and content that run in Connect. The Environment variables on Posit Connect article provides an example of this workflow."
+  },
+  {
+    "objectID": "resources/install-python.html#optional-install-multiple-versions-of-python",
+    "href": "resources/install-python.html#optional-install-multiple-versions-of-python",
+    "title": "Install Python",
+    "section": "(Optional) Install multiple versions of Python",
+    "text": "(Optional) Install multiple versions of Python\nTo install multiple versions of Python on the same server, repeat these steps to specify, download, and install a different version of Python alongside existing versions.\n\n\n\n\n\n\nNote\n\n\n\nUse Connect’s System Requirements - Runtime support documentation to confirm the minimum Python version supported by Connect. Configuration files that include Python 3 versions lower than the minimum supported version cause an error during Connect startup."
+  },
+  {
+    "objectID": "resources/install-python.html#additional-information",
+    "href": "resources/install-python.html#additional-information",
+    "title": "Install Python",
+    "section": "Additional information",
+    "text": "Additional information\nRefer to the rstudio/python-builds repository on GitHub for more information on these binary distributions of Python.\nFollow these steps to install Python from source."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Posit Docs",
+    "section": "",
+    "text": "Get started\n\n\nReference Architectures Install Licensing Configuration Networking Storage\n\n\nDocumentation by product\n\n\nWorkbench Connect Package Manager Team RStudio RStudio Desktop Pro Posit Connect Cloud\n\n\nPosit Cloud Public Package Manager shinyapps.io Marketplace Offers\n\n\nPartnerships\n\n\nSnowflake Databricks AWS SageMaker"
+  }
+]

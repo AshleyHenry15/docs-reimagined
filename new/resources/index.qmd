@@ -1,0 +1,6 @@
+---
+title: Resources
+---
+
+A comprehensive ecosystem of resources to get you started on your Posit Enterprise journey.
+

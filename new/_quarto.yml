@@ -1,0 +1,37 @@
+project:
+  type: website
+
+website:
+  title: "Posit Docs"
+  navbar:
+    left:
+      - text: Enterprise
+        href: enterprise/index.qmd
+      - text: Resources
+        menu:
+          - text: Install Python
+            href: /resources/install-python.qmd
+          - text: Install R
+            href: resources/install-r.qmd
+          - text: Install Quarto
+            href: resources/install-quarto.qmd
+      - text: Open Source
+        href: open-source/index.qmd
+      - text: Explore
+        href: explore/index.qmd
+
+    right:
+      - href: https://support.posit.co/
+        text: Support
+      - href: platform-support/index.qmd
+        text: Platform Support
+      - href: supported-versions/index.qmd
+        text: Supported Versions
+
+
+format:
+  html:
+    theme: 
+      light: [brand, styles.scss]
+
+

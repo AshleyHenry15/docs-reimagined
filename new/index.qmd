@@ -1,0 +1,47 @@
+---
+pagetitle: "Posit Product Documentation"
+toc: false
+page-layout: full
+---
+
+<div class="banner-container">
+  <img src="/images/posit-banner.png" style="margin-bottom:90px;" alt="Posit Docs Banner" class="responsive-banner">
+</div>
+
+
+<h2 class="custom-center">Get started</h2>
+
+<div class="centered-div">
+  <button type="button" class="btn btn-light">Reference Architectures</button>
+  <button type="button" class="btn btn-light">Install</button>
+  <button type="button" class="btn btn-light">Licensing</button>
+  <button type="button" class="btn btn-light">Configuration</button>
+  <button type="button" class="btn btn-light">Networking</button>
+  <button type="button" class="btn btn-light">Storage</button>
+</div>
+
+
+<h2 class="custom-center">Documentation by product</h2>
+
+<div class="centered-div">
+  <button type="button" class="btn btn-light">Workbench</button>
+  <button type="button" class="btn btn-light">Connect</button>
+  <button type="button" class="btn btn-light">Package Manager</button>
+  <button type="button" class="btn btn-light">Team</button>
+  <button type="button" class="btn btn-light">RStudio</button>
+  <button type="button" class="btn btn-light">RStudio Desktop Pro</button>
+  <button type="button" class="btn btn-light">Posit Connect Cloud</button>
+</div>
+<div class="centered-div">
+  <button type="button" class="btn btn-light">Posit Cloud</button>
+  <button type="button" class="btn btn-light">Public Package Manager</button>
+  <button type="button" class="btn btn-light">shinyapps.io</button>
+  <button type="button" class="btn btn-light">Marketplace Offers</button>
+</div>
+
+<h2 class="custom-center">Partnerships</h2>
+<div class="centered-div">
+  <button type="button" class="btn btn-light">Snowflake</button>
+  <button type="button" class="btn btn-light">Databricks</button>
+  <button type="button" class="btn btn-light">AWS SageMaker</button>
+</div>

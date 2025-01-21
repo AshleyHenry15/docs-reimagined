@@ -1,0 +1,231 @@
+---
+title: Install R
+description: These instructions describe how to install R from precompiled binaries on a Linux server.
+format:
+  html:
+    code-overflow: wrap
+aliases:
+  - /resources/r/install-r-binary/
+  - install-r/
+  - /resources/snippets/r-versions/
+---
+The recommended installation instructions for R covers making multiple versions of R available, and avoid replacing existing versions of R when updating system packages.
+
+Additionally, these instructions cover installing multiple versions of R, downloading R, creating a symlink to R, etc.
+
+## Install required dependencies
+
+To install the necessary runtime dependencies for R, enable
+additional repositories for third-party or source packages by using the
+following commands:
+
+:::{.panel-tabset}
+## RHEL 9
+    
+Enable the Extra Packages for Enterprise Linux (EPEL) repository:
+
+```{.bash}
+sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+```
+
+Enable the CodeReady Linux Builder repository:
+
+:::{.panel-tabset .nav-pills }
+
+## On-premises
+
+```{.bash}
+sudo subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms
+```
+
+## Public cloud
+
+```{.bash}
+# enable the CodeReady Linux Builder repository from Red Hat Update Infrastructure (RHUI) 
+sudo dnf install dnf-plugins-core
+sudo dnf config-manager --set-enabled codeready-builder-for-rhel-9-*-rpms
+```
+
+:::
+
+## RHEL 8
+
+Enable the Extra Packages for Enterprise Linux (EPEL) repository
+
+```{.bash}
+sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+```
+
+Enable the CodeReady Linux Builder repository:
+
+:::{.panel-tabset .nav-pills }
+
+## On-premises
+
+```{.bash}
+sudo subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms
+```
+
+## Public cloud
+
+```{.bash}
+# enable the CodeReady Linux Builder repository from Red Hat Update Infrastructure (RHUI) 
+sudo dnf install dnf-plugins-core
+sudo dnf config-manager --set-enabled "codeready-builder-for-rhel-8-*-rpms"
+```
+
+:::
+
+:::
+
+## Specify R version
+
+{{< include /_snippets/install-r-versions.md >}}
+
+The CVE-2024-27322 patched versions of R >= 4.0.0 are available via the links below.
+If you previously installed R from these links, reinstall to obtain a patched version.
+See [rstudio/r-builds#219](https://github.com/rstudio/r-builds/pull/219) for more details.
+
+For multiple versions of R, follow the remaining steps and repeat them for each R version required:
+
+```{.bash}
+export R_VERSION={{< var installr.currentversion >}}
+```
+
+{{< include ../_snippets/r-versions.md >}}
+
+## Download and install R
+
+Download and install the desired version of R.
+
+:::{.panel-tabset}
+## RHEL
+
+:::{.panel-tabset .nav-pills }
+
+## RHEL 9
+```{.bash}
+curl -O https://cdn.rstudio.com/r/rhel-9/pkgs/R-${R_VERSION}-1-1.x86_64.rpm
+sudo dnf install R-${R_VERSION}-1-1.x86_64.rpm
+```
+
+## RHEL 8
+```{.bash}
+curl -O https://cdn.rstudio.com/r/centos-8/pkgs/R-${R_VERSION}-1-1.x86_64.rpm
+sudo yum install R-${R_VERSION}-1-1.x86_64.rpm
+```
+:::
+
+## Ubuntu
+
+:::{.panel-tabset .nav-pills }
+
+## Ubuntu 24.04
+```{.bash}
+curl -O https://cdn.rstudio.com/r/ubuntu-2404/pkgs/r-${R_VERSION}_1_amd64.deb
+sudo apt-get update
+sudo apt-get install ./r-${R_VERSION}_1_amd64.deb
+```
+
+## Ubuntu 22.04
+```{.bash}
+curl -O https://cdn.rstudio.com/r/ubuntu-2204/pkgs/r-${R_VERSION}_1_amd64.deb
+sudo apt-get update
+sudo apt-get install ./r-${R_VERSION}_1_amd64.deb
+```
+
+## Ubuntu 20.04
+```{.bash}
+curl -O https://cdn.rstudio.com/r/ubuntu-2004/pkgs/r-${R_VERSION}_1_amd64.deb
+sudo apt-get update
+sudo apt-get install ./r-${R_VERSION}_1_amd64.deb
+```
+:::
+
+## Debian
+
+:::{.panel-tabset .nav-pills }
+
+## Debian 12
+```{.bash}
+curl -O https://cdn.rstudio.com/r/debian-12/pkgs/r-${R_VERSION}_1_amd64.deb
+sudo apt-get update
+sudo apt-get install ./r-${R_VERSION}_1_amd64.deb
+```
+
+## Debian 11
+```{.bash}
+curl -O https://cdn.rstudio.com/r/debian-11/pkgs/r-${R_VERSION}_1_amd64.deb
+sudo apt-get update
+sudo apt-get install ./r-${R_VERSION}_1_amd64.deb
+```
+
+## Debian 10
+```{.bash}
+curl -O https://cdn.rstudio.com/r/debian-10/pkgs/r-${R_VERSION}_1_amd64.deb
+sudo apt-get update
+sudo apt-get install ./r-${R_VERSION}_1_amd64.deb
+```
+
+:::
+
+## SUSE
+
+:::{.panel-tabset .nav-pills }
+
+## SUSE 15 SP5
+```{.bash}
+curl -O https://cdn.rstudio.com/r/opensuse-155/pkgs/R-${R_VERSION}-1-1.x86_64.rpm
+sudo zypper --no-gpg-checks install R-${R_VERSION}-1-1.x86_64.rpm
+```
+
+## SUSE 15 SP6
+```{.bash}
+curl -O https://cdn.rstudio.com/r/opensuse-156/pkgs/R-${R_VERSION}-1-1.x86_64.rpm
+sudo zypper --no-gpg-checks install R-${R_VERSION}-1-1.x86_64.rpm
+```
+:::
+
+:::
+
+## Verify R installation
+
+Test that R was successfully installed by running:
+
+```{.bash}
+/opt/R/${R_VERSION}/bin/R --version
+```
+
+## Create a symlink to R
+
+This section only applies to the _first_ installation of R on a given system.
+
+Skip this section for subsequent installation.
+
+To ensure that R is available on the default system `PATH` variable, create
+symbolic links to the version of R that's installed:
+
+```{.bash}
+sudo ln -s /opt/R/${R_VERSION}/bin/R /usr/local/bin/R
+sudo ln -s /opt/R/${R_VERSION}/bin/Rscript /usr/local/bin/Rscript
+```
+
+## (Optional) Install recommended packages
+
+Posit recommends installing several (optional) system dependencies used common R packages.
+
+Posit Package Manager can automatically detect known system dependencies and provides installation commands for supported Linux operating systems. The [System Dependency Detection documentation](https://docs.posit.co/rspm/admin/appendix/system-dependency-detection/) provides additional information.
+
+## (Optional) Install multiple versions of R
+
+To install multiple versions of R on the same server, repeat
+these steps to specify, download, and install a different version of R alongside
+existing versions.
+
+## Additional information
+
+Refer to the [rstudio/r-builds repository](https://github.com/rstudio/r-builds)
+on GitHub for more information on these binary distributions of R.
+
+If you need to customize how R is configured. For example, installing R at a
+different location than `/opt/R`, then follow these [steps to install R from source](/resources/install-r-source.md).

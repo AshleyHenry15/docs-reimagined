@@ -1,0 +1,299 @@
+---
+title: Install Python
+description: How to install Python on a Linux server appropriately from pre-compiled binaries.
+format:
+  html:
+    code-overflow: wrap
+aliases:
+  - /resources/python/install-python-binary/
+  - install-python/
+  - /resources/snippets/python-versions/
+---
+
+:::{.callout-note appearance="simple"}
+Posit professional products require multiple versions of Python.
+:::
+
+## Install required dependencies
+
+To install the necessary runtime dependencies for Python, you must enable
+additional repositories for third-party or source packages by using the
+following commands:
+
+:::{.panel-tabset}
+## RHEL 9
+
+Enable the Extra Packages for Enterprise Linux (EPEL) repository:
+
+```{.bash}
+sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+```
+
+Enable the CodeReady Linux Builder repository:
+
+:::{.panel-tabset .nav-pills }
+
+## On-premises
+
+```{.bash}
+sudo subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms
+```
+
+## Public cloud
+
+```{.bash}
+# enable the CodeReady Linux Builder repository from Red Hat Update Infrastructure (RHUI) 
+sudo dnf install dnf-plugins-core
+sudo dnf config-manager --set-enabled codeready-builder-for-rhel-9-*-rpms
+```
+
+:::
+
+## RHEL 8
+
+Enable the Extra Packages for Enterprise Linux (EPEL) repository
+
+```{.bash}
+sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+```
+
+Enable the CodeReady Linux Builder repository:
+
+:::{.panel-tabset .nav-pills }
+## On-premises
+
+```{.bash}
+sudo subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms
+```
+
+## Public cloud
+
+```{.bash}
+# enable the CodeReady Linux Builder repository from Red Hat Update Infrastructure (RHUI) 
+sudo dnf install dnf-plugins-core
+sudo dnf config-manager --set-enabled "codeready-builder-for-rhel-8-*-rpms"
+```
+
+:::
+
+:::
+
+## Specify the Python version
+
+Consult with your Python user group to determine which version/versions of Python they would like installed.
+Once defined, set the environment variable, shown below, to the first Python version they request.
+
+```{.bash}
+export PYTHON_VERSION="{{< var python.version >}}"
+```
+
+{{< include ../_snippets/python-versions.md >}}
+
+## Download and install Python
+
+Download and install the desired version of Python.
+
+:::{.panel-tabset}
+
+## RHEL
+
+:::{.panel-tabset .nav-pills }
+## RHEL9
+
+```{.bash}
+curl -O https://cdn.rstudio.com/python/rhel-9/pkgs/python-${PYTHON_VERSION}-1-1.x86_64.rpm
+sudo yum install python-${PYTHON_VERSION}-1-1.x86_64.rpm
+```
+
+## RHEL 8
+
+```{.bash}
+curl -O https://cdn.rstudio.com/python/centos-8/pkgs/python-${PYTHON_VERSION}-1-1.x86_64.rpm
+sudo yum install python-${PYTHON_VERSION}-1-1.x86_64.rpm
+```
+:::
+
+## Ubuntu
+
+:::{.panel-tabset .nav-pills }
+## Ubuntu 24.04
+
+```{.bash}
+curl -O https://cdn.rstudio.com/python/ubuntu-2404/pkgs/python-${PYTHON_VERSION}_1_amd64.deb
+sudo apt-get update
+sudo apt-get install ./python-${PYTHON_VERSION}_1_amd64.deb
+```
+
+## Ubuntu 22.04
+
+```{.bash}
+curl -O https://cdn.rstudio.com/python/ubuntu-2204/pkgs/python-${PYTHON_VERSION}_1_amd64.deb
+sudo apt-get update
+sudo apt-get install ./python-${PYTHON_VERSION}_1_amd64.deb
+```
+
+## Ubuntu 20.04
+
+```{.bash}
+curl -O https://cdn.rstudio.com/python/ubuntu-2004/pkgs/python-${PYTHON_VERSION}_1_amd64.deb
+sudo apt-get update
+sudo apt-get install ./python-${PYTHON_VERSION}_1_amd64.deb
+```
+:::
+
+## Debian
+
+:::{.panel-tabset .nav-pills }
+## Debian 12
+
+```{.bash}
+curl -O https://cdn.rstudio.com/python/debian-12/pkgs/python-${PYTHON_VERSION}_1_amd64.deb
+sudo apt-get update
+sudo apt-get install ./python-${PYTHON_VERSION}_1_amd64.deb
+```
+
+## Debian 11
+
+```{.bash}
+curl -O https://cdn.rstudio.com/python/debian-11/pkgs/python-${PYTHON_VERSION}_1_amd64.deb
+sudo apt-get update
+sudo apt-get install ./python-${PYTHON_VERSION}_1_amd64.deb
+```
+
+## Debian 10
+
+```{.bash}
+curl -O https://cdn.rstudio.com/python/debian-10/pkgs/python-${PYTHON_VERSION}_1_amd64.deb
+sudo apt-get update
+sudo apt-get install ./python-${PYTHON_VERSION}_1_amd64.deb
+```
+:::
+
+## SUSE
+
+:::{.panel-tabset .nav-pills }
+## SUSE 15 SP5/SP6
+
+```{.bash}
+curl -O https://cdn.rstudio.com/python/opensuse-155/pkgs/python-${PYTHON_VERSION}-1-1.x86_64.rpm
+sudo zypper --no-gpg-checks install python-${PYTHON_VERSION}-1-1.x86_64.rpm
+```
+:::
+:::
+
+## Verify Python installation
+
+Verify that Python is installed by running the following command:
+
+```{.bash}
+/opt/python/"${PYTHON_VERSION}"/bin/python --version
+```
+
+## Upgrade required Python tools
+
+When installing Python on a Posit Connect server, each Python installation is
+required to have the `pip`, `venv`, and `setuptools` packages installed.
+The Python `venv` module is used to create content-specific environments, while
+`pip` and `setuptools` are used to install Python packages.
+
+::: {.callout-note}
+When using `Python >= 3.12`, the `setuptools` module is
+[no longer installed by default](https://docs.python.org/3/whatsnew/3.12.html).
+:::
+
+Connect requires that users have updated versions of these Python tools.
+To install and upgrade the required tools, run the following command:
+
+```{.bash}
+sudo /opt/python/"${PYTHON_VERSION}"/bin/pip install \
+    --upgrade pip setuptools wheel
+```
+
+## (Optional) Configure a PyPI repository
+
+You can specify a default PyPI mirror for all installations of Python by creating 
+a [pip configuration file](https://pip.pypa.io/en/stable/user_guide/#config-file).
+This can be useful if you are using an internal PyPI mirror
+such as [Posit Package Manager](https://posit.co/products/cloud/public-package-manager/):
+
+To do so, create a file located at `/etc/pip.conf` containing:
+
+```{.ini filename="File: /etc/pip.conf"}
+[global]
+index-url = https://example.company.com/pypi/latest
+```
+
+Replace `https://example.company.com/pypi/latest` with the URL of your PyPI mirror,
+available in Package Manager on the Setup page of your PyPI repository.
+
+## (Optional) Add Python to the system `PATH`
+
+:::{.callout-note}
+You can configure Python on the system `PATH` so that users can use `pip`
+within a terminal to install packages to their home directory, similar to
+how R works with `install.packages()`.
+:::
+
+The recommended method to add Python to the `PATH` is to append the version of
+Python that you installed to the system-wide `PATH` variable. For example, define this in a script within the `/etc/profile.d/` directory:
+
+```{.bash}
+cat << EOF | sudo tee /etc/profile.d/python.sh
+#!/bin/bash
+export PATH=/opt/python/${PYTHON_VERSION}/bin:\$PATH
+EOF
+```
+
+## (Optional) Make Python available as a Jupyter Kernel
+
+For Workbench, you can make the version of Python installed available
+for use in Jupyter by running these commands:
+
+```{.bash}
+sudo /opt/python/${PYTHON_VERSION}/bin/pip install ipykernel
+sudo /opt/python/${PYTHON_VERSION}/bin/python -m ipykernel install --name py${PYTHON_VERSION} --display-name "Python ${PYTHON_VERSION}"
+```
+
+## (Optional) Configure Python local <!-- vale Posit.Headings = NO -->Certificate Authority<!-- vale Posit.Headings = YES --> trust
+
+Add the root CA certificate to the system trust store for Python on Workbench to trust internally generated certificates. See the [Posit Team SSL Considerations](https://support.posit.co/hc/en-us/articles/4416056988567-Posit-Team-SSL-Considerations) support article for more information.
+Then, point the environment variable `REQUESTS_CA_BUNDLE` to the Linux system certificate store you have just updated based on the article above. 
+You can set `REQUESTS_CA_BUNDLE` to the appropriate certificate bundle by updating the `/etc/rstudio/launcher-env` on Posit Workbench like this:
+
+:::{.panel-tabset}
+## Red Hat/CentOS
+
+```{.bash}
+JobType: any
+Workbench: any
+Environment: REQUESTS_CA_BUNDLE=/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
+```
+
+## Ubuntu/Debian
+
+```{.bash}
+JobType: any
+Workbench: any
+Environment: REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+```
+
+:::
+
+For Posit Connect, use a program supervisor script to set `REQUESTS_CA_BUNDLE` for all applications and content 
+that run in Connect. The [Environment variables on Posit Connect article](https://support.posit.co/hc/en-us/articles/360016606613-Environment-variables-on-Posit-formerly-RStudio-Connect) provides an example of this workflow.
+
+## (Optional) Install multiple versions of Python
+
+To install multiple versions of Python on the same server, repeat
+these steps to specify, download, and install a different version of Python alongside
+existing versions.
+
+:::{.callout-note}
+Use Connect's [System Requirements - Runtime support](https://docs.posit.co/connect/admin/getting-started/requirements/#runtime-support) documentation to confirm the minimum Python version supported by Connect. Configuration files that include Python 3 versions lower than the minimum supported version cause an error during Connect startup.
+:::
+
+## Additional information
+
+Refer to the [rstudio/python-builds](https://github.com/rstudio/python-builds) repository on GitHub for more information on these binary distributions of Python.
+
+Follow [these steps](/resources/install-python-source) to install Python from source.
