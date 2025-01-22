@@ -18,6 +18,7 @@ page-layout: full
   <button type="button" class="btn btn-light">Configuration</button>
   <button type="button" class="btn btn-light">Networking</button>
   <button type="button" class="btn btn-light">Storage</button>
+  <button type="button" class="btn btn-light">Marketplace Offers</button>
 </div>
 
 
@@ -35,9 +36,8 @@ page-layout: full
 </div>
 <div class="centered-div">
   <button type="button" class="btn btn-light">Posit Cloud</button>
-  <button type="button" class="btn btn-light">Public Package Manager</button>
   <button type="button" class="btn btn-light">shinyapps.io</button>
-  <button type="button" class="btn btn-light">Marketplace Offers</button>
+
 </div>
 
 <h2 class="custom-center">Partnerships</h2>
