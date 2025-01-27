@@ -4,11 +4,6 @@ toc: false
 page-layout: full
 ---
 
-<div class="banner-container">
-  <img src="/images/posit-banner.png" style="margin-bottom:90px;" alt="Posit Docs Banner" class="responsive-banner">
-</div>
-
-
 <h2 class="custom-center">Get started</h2>
 
 <div class="centered-div">

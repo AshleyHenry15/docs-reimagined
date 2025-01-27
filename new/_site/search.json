@@ -4,7 +4,7 @@
     "href": "explore/index.html",
     "title": "Explore",
     "section": "",
-    "text": "Need help? Here is the complete coverage for all of our Posit Product documentation.\n\n\n\n\n\n\n\n\n\n\n\n\nEnterprise\n\n\nSomething\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstall Python\n\n\nHow to install Python on a Linux server appropriately from pre-compiled binaries.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstall Quarto\n\n\nHow to install Quarto on a Linux server.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstall R\n\n\nThese instructions describe how to install R from precompiled binaries on a Linux server.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOpen Source\n\n\nA collection of open-source resources.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPartnerships\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPosit Team\n\n\nAn overview of Posit Team and Marketplace offerings.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSupported Versions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Need help? Here is the complete coverage for all of our Posit Product documentation.\n\n\n\n\n\n\n\n\n\n\n\n\nInstall Python\n\n\nHow to install Python on a Linux server appropriately from pre-compiled binaries.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstall Quarto\n\n\nHow to install Quarto on a Linux server.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstall R\n\n\nThese instructions describe how to install R from precompiled binaries on a Linux server.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPartnerships\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPosit Team\n\n\nAn overview of Posit Team and Marketplace offerings.\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "resources/install-r.html",
@@ -242,7 +242,7 @@
     "href": "enterprise/index.html",
     "title": "Enterprise",
     "section": "",
-    "text": "Workbench\nConnect\nPackage Manager\nTeam"
+    "text": "Posit Workbench\n          Posit Workbench is a secure and scalable developer platform for data science in R and Python.\n          \n          Admin\n          User\n          \n          \n            Release Notes\n          \n        \n      \n      \n        \n          Posit Connect\n          Description here\n          \n            Documentation\n          \n          \n            Release Notes\n          \n        \n      \n      \n        \n          Posit Package Manager\n          Description here\n          \n            Documentation\n          \n          \n            Release Notes"
   },
   {
     "objectID": "resources/install-quarto.html",
@@ -298,6 +298,6 @@
     "href": "index.html",
     "title": "Posit Docs",
     "section": "",
-    "text": "Get started\n\n\nReference Architectures Install Licensing Configuration Networking Storage\n\n\nDocumentation by product\n\n\nWorkbench Connect Package Manager Team RStudio Pro Drivers RStudio Desktop Pro Posit Connect Cloud\n\n\nPosit Cloud Public Package Manager shinyapps.io Marketplace Offers\n\n\nPartnerships\n\n\nSnowflake Databricks AWS SageMaker"
+    "text": "Get started\n\n\nReference Architectures Install Licensing Configuration Networking Storage Marketplace Offers\n\n\nDocumentation by product\n\n\nWorkbench Connect Package Manager Team RStudio Pro Drivers RStudio Desktop Pro Posit Connect Cloud\n\n\nPosit Cloud shinyapps.io\n\n\nPartnerships\n\n\nSnowflake Databricks AWS SageMaker"
   }
 ]

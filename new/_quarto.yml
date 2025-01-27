@@ -1,30 +1,45 @@
 project:
-  type: website
+  type: posit-docs
 
 website:
   title: "Posit Docs"
   navbar:
     left:
       - text: Enterprise
-        href: enterprise/index.qmd
+        href: enterprise/index.md
       - text: Resources
-        href: resources/index.qmd
+        href: resources/index.md
       - text: Open Source
-        href: open-source/index.qmd
+        href: open-source/index.md
       - text: Explore
-        href: explore/index.qmd
+        href: explore/index.md
 
     right:
       - href: https://support.posit.co/
         text: Support
-      - href: platform-support/index.qmd
+      - href: platform-support/index.md
         text: Platform Support
-      - href: supported-versions/index.qmd
+      - href: supported-versions/index.md
         text: Supported Versions
+
+  page-footer:
+    left: |
+        Copyright &copy; {{< env CURRENT_YEAR >}} Posit Software, PBC. All Rights Reserved.
+    right:
+      - icon: question-circle-fill
+        aria-label: 'Link to Posit Support'
+        href: "https://support.posit.co/hc/en-us"
+      - text: '<a href="#" id="open_preferences_center" title="Manage your cookie preferences"><i class="bi bi-cookie"></i></i></a>'
+        aria-label: 'Cookie Prefs'
+      - icon: lightbulb-fill
+        aria-label: 'Link to Posit Solutions'
+        href: "https://solutions.posit.co/"
+      - text: "<img alt='Link to main Posit site' src='/images/posit-icon-fullcolor.svg' id='footer-right-posit-logo'>"
+        href: "https://posit.co/"
 
 format:
   html:
     theme: 
-      light: [darkly, styles.scss]
+      light: [styles.scss]
 
 

@@ -2,15 +2,11 @@
   {
     "listing": "/explore/index.html",
     "items": [
-      "/enterprise/index.html",
       "/resources/install-python.html",
       "/resources/install-quarto.html",
       "/resources/install-r.html",
-      "/open-source/index.html",
       "/resources/partnerships/index.html",
-      "/resources/team/index.html",
-      "/resources/index.html",
-      "/supported-versions/index.html"
+      "/resources/team/index.html"
     ]
   },
   {
