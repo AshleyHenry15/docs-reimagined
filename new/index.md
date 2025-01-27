@@ -2,9 +2,14 @@
 pagetitle: "Posit Product Documentation"
 toc: false
 page-layout: full
+page-navigation: false
+css: /styles/styles.scss
+link-external-icon: false
 ---
 
-<h2 class="custom-center">Get started</h2>
+```{=html}
+
+<div class="banner-h2">Get started</div>
 
 <div class="centered-div">
   <button type="button" class="btn btn-light">Reference Architectures</button>
@@ -16,8 +21,7 @@ page-layout: full
   <button type="button" class="btn btn-light">Marketplace Offers</button>
 </div>
 
-
-<h2 class="custom-center">Documentation by product</h2>
+<div class="banner-h2">Documentation by product</div>
 
 <div class="centered-div">
   <button type="button" class="btn btn-light">Workbench</button>
@@ -26,18 +30,20 @@ page-layout: full
   <button type="button" class="btn btn-light">Team</button>
   <button type="button" class="btn btn-light">RStudio</button>
   <button type="button" class="btn btn-light">Pro Drivers</button>
+
   <button type="button" class="btn btn-light">RStudio Desktop Pro</button>
+  <button type="button" class="btn btn-light">Shiny Server</button>
   <button type="button" class="btn btn-light">Posit Connect Cloud</button>
-</div>
-<div class="centered-div">
+
   <button type="button" class="btn btn-light">Posit Cloud</button>
   <button type="button" class="btn btn-light">shinyapps.io</button>
-
 </div>
 
-<h2 class="custom-center">Partnerships</h2>
+<div class="banner-h2">Partnerships</div>
+
 <div class="centered-div">
   <button type="button" class="btn btn-light">Snowflake</button>
   <button type="button" class="btn btn-light">Databricks</button>
   <button type="button" class="btn btn-light">AWS SageMaker</button>
 </div>
+```

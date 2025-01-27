@@ -5,12 +5,10 @@ website:
   title: "Posit Docs"
   navbar:
     left:
-      - text: Enterprise
-        href: enterprise/index.md
+      - text: Products
+        href: products/index.md
       - text: Resources
         href: resources/index.md
-      - text: Open Source
-        href: open-source/index.md
       - text: Explore
         href: explore/index.md
 

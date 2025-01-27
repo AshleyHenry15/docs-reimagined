@@ -298,6 +298,41 @@
     "href": "index.html",
     "title": "Posit Docs",
     "section": "",
-    "text": "Get started\n\n\nReference Architectures Install Licensing Configuration Networking Storage Marketplace Offers\n\n\nDocumentation by product\n\n\nWorkbench Connect Package Manager Team RStudio Pro Drivers RStudio Desktop Pro Posit Connect Cloud\n\n\nPosit Cloud shinyapps.io\n\n\nPartnerships\n\n\nSnowflake Databricks AWS SageMaker"
+    "text": "Get started\n\n\n  Reference Architectures\n  Install\n  Licensing\n  Configuration\n  Networking\n  Storage\n  Marketplace Offers\n\n\nDocumentation by product\n\n\n  Workbench\n  Connect\n  Package Manager\n  Team\n  RStudio\n  Pro Drivers\n\n  RStudio Desktop Pro\n  Shiny Server\n  Posit Connect Cloud\n\n  Posit Cloud\n  shinyapps.io\n\n\nPartnerships\n\n\n  Snowflake\n  Databricks\n  AWS SageMaker"
+  },
+  {
+    "objectID": "products/index.html",
+    "href": "products/index.html",
+    "title": "Posit Docs",
+    "section": "",
+    "text": "EnterpriseOpen sourceCloud\n\n\n\nWorkbench\nAdmin Guide User Guide Release Notes\n\n\nConnect\nDocumentation Release Notes\n\n\nPackage Manager\nDocumentation Release Notes\n\n\nPro Drivers\nDocumentation Release Notes\n\n\n\n\nQuarto\nDocumentation Release Notes\n\n\n\n\nSomething"
+  },
+  {
+    "objectID": "products/index.html#enterprise",
+    "href": "products/index.html#enterprise",
+    "title": "Posit Docs",
+    "section": "Enterprise",
+    "text": "Enterprise\n\nWorkbench\nAdmin Guide User Guide Release Notes\n\n\nConnect\nDocumentation Release Notes\n\n\nPackage Manager\nDocumentation Release Notes\n\n\nPro Drivers\nDocumentation Release Notes"
+  },
+  {
+    "objectID": "products/index.html#pro-drivers",
+    "href": "products/index.html#pro-drivers",
+    "title": "Posit Docs",
+    "section": "Pro Drivers",
+    "text": "Pro Drivers\nDocumentation Release Notes"
+  },
+  {
+    "objectID": "products/index.html#open-source",
+    "href": "products/index.html#open-source",
+    "title": "Posit Docs",
+    "section": "Open source",
+    "text": "Open source"
+  },
+  {
+    "objectID": "products/index.html#enterprise-1",
+    "href": "products/index.html#enterprise-1",
+    "title": "Posit Docs",
+    "section": "Enterprise",
+    "text": "Enterprise\n\nWorkbench\nAdmin Guide User Guide Release Notes\n\n\nConnect\nDocumentation Release Notes\n\n\nPackage Manager\nDocumentation Release Notes\n\n\nPro Drivers\nDocumentation Release Notes"
   }
 ]
