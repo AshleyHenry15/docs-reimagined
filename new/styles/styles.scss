@@ -3,8 +3,6 @@
 // import shared colors
 @import '_posit-colors';
 
-/*-- scss:defaults --*/
-
 /* css styles */
 
 /* Drivers logo grid
@@ -102,34 +100,5 @@ figure.driver-card a::after {
 
 .quarto-listing .listing-actions-group h3 {
   margin-top: 0;
-}
-
-
-.banner {
-  margin: 0 auto;
-  text-align: center;
-}
-
-
-.banner-h2 {
-  font-size: 1.5625em;
-  margin: 20px 0 16px;
-  line-height: 1.4;
-  font-weight: 600;
-  text-align: center;
-}
-
-
-// Center buttons guides
-
-.centered-div {
-  display: flex;              /* Use flexbox */
-  flex-direction: column;     /* Arrange buttons vertically */
-  justify-content: center;    /* Center vertically */
-  align-items: center;        /* Center horizontally */
-}
-
-.btn-light {
-  margin-bottom: 10px;
 }
 

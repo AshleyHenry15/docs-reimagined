@@ -38,6 +38,6 @@ website:
 format:
   html:
     theme: 
-      light: [styles.scss]
+      light: [styles/styles.scss]
 
 
